@@ -1,0 +1,47 @@
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-6" style="border-style:solid ; border-width: 1px;">
+
+      <h3>Series </h3>
+      <table class="table table-striped">
+        <thead class = "thead-dark">
+          <tr>
+            <th class="h4" >id</th>
+            <th class="h4">name</th>
+            <th class="h4">channel</th>
+            <th class="h4">season</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of series">
+            <td>
+              <dd (click)="onSelected(b)">{{b.id}}</dd>
+            </td>
+            <td>
+
+              <dd>{{b.name}}</dd>
+            </td>
+            <td>
+
+              <dd>{{b.channel}}</dd>
+            </td>
+            <td>
+
+              <dd>{{b.season}}</dd>
+            </td>
+        </tr>
+        </tbody>
+      </table>
+      <a>Season average: {{ promedio() }} </a>
+    </div>
+    <div class="col-6">
+      <div *ngIf="selected">
+        <app-seriesDetail [seriresDetail]="selectedSerie"></app-seriesDetail>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
